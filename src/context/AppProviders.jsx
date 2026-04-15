@@ -1,15 +1,17 @@
 import { use } from "react";
-import AppContexts from "../../../creativework/src/context/AppContexts";
+import AppContexts from "./AppContexts";
 
 const friendsPromise = fetch('/friends.json').then(res => res.json());
 
 const AppProviders = ({children}) => {
     // load friends data use
     const friends = use(friendsPromise);
-    console.log(friends);
+    // console.log(friends);
 
     // passing values
-    const values = {friends};
+    const values = {
+        friends,
+    };
 
     return (
         <AppContexts.Provider value={values}>

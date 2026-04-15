@@ -11,9 +11,9 @@ const Footer = () => {
             <Container>
                 <div className="space-y-5">
                     <div className='flex flex-col justify-center items-center gap-3'>
-                        <div className="w-35">
+                        <Link to="/" className="w-35">
                             <img src={logo} alt="" />
-                        </div>
+                        </Link>
                         <p className="text-sm md:text-base text-white">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                         <h4 className=" text-base md:text-lg lg:text-xl text-white font-medium">Social Links</h4>
                         <div className="flex justify-center items-center gap-3">

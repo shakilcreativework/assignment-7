@@ -1,6 +1,6 @@
 import logo from "./../../assets/logo.png"
 import Container from '../Container/Container';
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
@@ -31,12 +31,12 @@ const Navbar = () => {
     };
 
     return (
-        <div className=" sticky top-0 z-50 backdrop-blur-md py-4 shadow-xs">
+        <div className="sticky top-0 z-50 backdrop-blur-md py-4 shadow-xs">
             <Container>
                 <div className="flex justify-between items-center">
-                    <div>
+                    <Link to="/">
                         <img src={logo} alt="Website Logo" />
-                    </div>
+                    </Link>
                     {/* Desktop Menu */}
                     <ul className=" hidden md:flex justify-between items-center gap-4">
                         {

@@ -1,22 +1,13 @@
-import React from 'react';
+import { useContext } from 'react';
 import Container from '../../shared/Container/Container';
 import { Link } from 'react-router';
 import { FaPlus } from 'react-icons/fa';
-
-// {
-// "id": 1,
-// "name": "Amit Rahman",
-// "picture": "https://randomuser.me/api/portraits/men/32.jpg",
-// "email": "amit.rahman@gmail.com",
-// "days_since_contact": 20,
-// "status": "overdue",
-// "tags": ["college", "close friend"],
-// "bio": "We studied computer science together at university. Often go on weekend trips.",
-// "goal": 14,
-// "next_due_date": "2026-04-01"
-// }
+import AppContexts from '../../context/AppContexts';
+import FriendCard from '../../components/FriendCard/FriendCard';
 
 const Home = () => {
+    const {friends} = useContext(AppContexts);
+    // console.log(friends);
     return (
         <div className='py-20'>
             <Container>
@@ -29,19 +20,19 @@ const Home = () => {
                     </div>
                     <div className='space-y-10'>
                         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6'>
-                            <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7'>
+                            <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7 shadow-xs'>
                                 <h3 className=' text-xl md:text-2xl lg:text-3xl text-[#244d3f] font-semibold'>10</h3>
                                 <p className='font-normal text-sm md:text-base lg:text-lg text-[#64748b]'>Total Friends</p>
                             </div>
-                            <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7'>
+                            <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7 shadow-xs'>
                                 <h3 className=' text-xl md:text-2xl lg:text-3xl text-[#244d3f] font-semibold'>3</h3>
                                 <p className='font-normal text-sm md:text-base lg:text-lg text-[#64748b]'>On Track</p>
                             </div>
-                            <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7'>
+                            <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7 shadow-xs'>
                                 <h3 className=' text-xl md:text-2xl lg:text-3xl text-[#244d3f] font-semibold'>6</h3>
                                 <p className='font-normal text-sm md:text-base lg:text-lg text-[#64748b]'>Need Attention</p>
                             </div>
-                            <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7'>
+                            <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7 shadow-xs'>
                                 <h3 className=' text-xl md:text-2xl lg:text-3xl text-[#244d3f] font-semibold'>12</h3>
                                 <p className='font-normal text-sm md:text-base lg:text-lg text-[#64748b]'>Interactions This Month</p>
                             </div>
@@ -50,8 +41,10 @@ const Home = () => {
                         <h3 className=' text-lg md:text-xl lg:text-2xl text-[#1f2937] font-semibold'>Your Friends</h3>
                     </div>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6'>
-                    
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 mt-6'>
+                    {
+                        friends.map(friend => <FriendCard key={friend.id} friend={friend} />)
+                    }
                 </div>
             </Container>
         </div>
