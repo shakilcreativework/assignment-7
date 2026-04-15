@@ -15,7 +15,7 @@ const Home = () => {
                         <Link className="flex items-center justify-center gap-2 capitalize py-2 px-6 rounded-md text-base font-medium transition-all text-white bg-[#244d3f] w-fit"><FaPlus /> Add a Friend</Link>
                     </div>
                     <div className='space-y-10'>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6'>
+                        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6'>
                             <div className='bg-white space-y-2 flex flex-col justify-center items-center text-center rounded-lg p-5 lg:p-6 xl:p-7'>
                                 <h3 className=' text-xl md:text-2xl lg:text-3xl text-[#244d3f] font-semibold'>10</h3>
                                 <p className='font-normal text-sm md:text-base lg:text-lg text-[#64748b]'>Total Friends</p>
