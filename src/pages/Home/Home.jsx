@@ -3,6 +3,19 @@ import Container from '../../shared/Container/Container';
 import { Link } from 'react-router';
 import { FaPlus } from 'react-icons/fa';
 
+// {
+// "id": 1,
+// "name": "Amit Rahman",
+// "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+// "email": "amit.rahman@gmail.com",
+// "days_since_contact": 20,
+// "status": "overdue",
+// "tags": ["college", "close friend"],
+// "bio": "We studied computer science together at university. Often go on weekend trips.",
+// "goal": 14,
+// "next_due_date": "2026-04-01"
+// }
+
 const Home = () => {
     return (
         <div className='py-20'>
@@ -36,6 +49,9 @@ const Home = () => {
                         <hr className='text-[#e9e9e9]' />
                         <h3 className=' text-lg md:text-xl lg:text-2xl text-[#1f2937] font-semibold'>Your Friends</h3>
                     </div>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6'>
+                    
                 </div>
             </Container>
         </div>
