@@ -14,7 +14,7 @@ const Footer = () => {
                         <Link to="/" className="w-35">
                             <img src={logo} alt="" />
                         </Link>
-                        <p className="text-sm md:text-base text-white">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
+                        <p className="text-sm md:text-base text-white text-center">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                         <h4 className=" text-base md:text-lg lg:text-xl text-white font-medium">Social Links</h4>
                         <div className="flex justify-center items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-white flex justify-center items-center gap-3">
@@ -29,7 +29,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <hr className="text-[#1a8862]" />
-                    <div className="flex justify-between items-center gap-3 text-sm text-[#fafafa]">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-[#fafafa]">
                         <p>&copy; 2026 KeenKeeper. All rights reserved.</p>
                         <div className="flex justify-center items-center gap-3">
                             <Link to="/"><span>Privacy Policy</span></Link>

@@ -49,8 +49,8 @@ const Timeline = () => {
                     <div>
                         {
                             showData.length === 0 ?
-                                <div className="bg-white rounded-lg mt-10 h-20 flex justify-center items-center">
-                                    <p className="text-[#64748b] text-lg lg:text-xl">You don’t have any timeline history yet.</p>
+                                <div className="bg-white rounded-lg mt-10 min-h-50 flex justify-center items-center">
+                                    <p className="text-[#64748b] text-lg lg:text-xl text-center">You don’t have any timeline history yet.</p>
                                 </div>
                                 :
                                 <div className="flex flex-col gap-3 mt-5">

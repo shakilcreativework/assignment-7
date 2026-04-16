@@ -60,7 +60,7 @@ const Stats = () => {
                     {
                         timeline.length === 0 ?
                             <div className='bg-white min-h-50 flex justify-center items-center'>
-                                <p className="text-[#64748b] text-lg lg:text-xl">No timeline history yet. Start adding interactions to see analytics.</p>
+                                <p className="text-[#64748b] text-lg lg:text-xl text-center">No timeline history yet. Start adding interactions to see analytics.</p>
                             </div>
                             :
                             <div className="bg-white rounded-xl p-6 shadow-sm">
