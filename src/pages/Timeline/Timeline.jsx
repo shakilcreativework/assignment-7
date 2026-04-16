@@ -1,13 +1,7 @@
 import { useContext, useState } from "react";
 import AppContexts from "../../context/AppContexts";
 import Container from "../../shared/Container/Container";
-// import call from "./../../assets/call.png";
-// import text from "./../../assets/text.png";
-// import video from "./../../assets/video.png";
 
-import { MdAddCall } from "react-icons/md";
-import { IoDocumentTextSharp } from "react-icons/io5";
-import { HiVideoCamera } from "react-icons/hi2";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 
@@ -56,15 +50,14 @@ const Timeline = () => {
                         {
                             showData.length === 0 ?
                                 <div className="bg-white rounded-lg mt-10 h-20 flex justify-center items-center">
-                                    <p className="text-[#64748b] text-lg lg:text-xl">Timeline history empty!</p>
+                                    <p className="text-[#64748b] text-lg lg:text-xl">You don’t have any timeline history yet.</p>
                                 </div>
                                 :
                                 <div className="flex flex-col gap-3 mt-5">
                                     {
                                         showData.map((info, idx) => (
                                             <div key={idx} className="flex gap-4 items-center bg-white rounded-lg px-4 py-2 shadow-xs">
-                                                {/* <img className="w-12" src={info.type === "call" ? call : info.type === "text" ? text : info.type === "video" ? video : ""} alt="Call Icon" /> */}
-                                                {info.type === "call" ? <MdAddCall className="text-4xl" /> : info.type === "text" ? <IoDocumentTextSharp className="text-4xl" /> : info.type === "video" ? <HiVideoCamera className="text-4xl" /> : ""}
+                                                <img className="w-12" src={info.type === "call" ? 'https://i.ibb.co.com/TMKdG4F9/phone.png' : info.type === "text" ? 'https://i.ibb.co.com/d4MZRCX1/text.png' : info.type === "video" ? 'https://i.ibb.co.com/pcSn7d3/3d-video.png' : ""} alt="Call Icon" />
                                                 <div>
                                                     <div className="flex gap-2">
                                                         <h2 className="text-[#244d3f] text-lg lg:text-xl capitalize font-medium">{info.type}</h2>

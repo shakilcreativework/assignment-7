@@ -5,10 +5,7 @@ import Container from "../../shared/Container/Container";
 import { FaRegBell } from "react-icons/fa";
 import { FaBoxArchive } from "react-icons/fa6";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { MdAddCall } from "react-icons/md";
-import { IoDocumentTextSharp } from "react-icons/io5";
 import { toast } from "react-toastify";
-import { HiVideoCamera } from "react-icons/hi2";
 
 const FriendInfo = () => {
     const friendInfo = useParams();
@@ -25,9 +22,9 @@ const FriendInfo = () => {
         setTimeline([...timeline, type]);
         toast.success(
             <p className="capitalize text-base font-medium flex items-center gap-2">
-                {category === 'call' && <MdAddCall />}
-                {category === 'text' && <IoDocumentTextSharp />}
-                {category === 'video' && <HiVideoCamera />}
+                {category === 'call' && <img  className="w-5" src="https://i.ibb.co.com/TMKdG4F9/phone.png" alt="call" />}
+                {category === 'text' && <img  className="w-5" src="https://i.ibb.co.com/d4MZRCX1/text.png" alt="text" />}
+                {category === 'video' && <img className="w-5"  src="https://i.ibb.co.com/pcSn7d3/3d-video.png" alt="video" />}
                 <span>{meet}</span>
             </p>,
             {
@@ -104,7 +101,7 @@ const FriendInfo = () => {
                                         day: "numeric"
                                     })
                                 })} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
-                                    <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><MdAddCall /></h2>
+                                    <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><img  className="w-7" src="https://i.ibb.co.com/TMKdG4F9/phone.png" alt="call" /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Call</p>
                                 </div>
                                 <div onClick={() => handleTimeline({
@@ -114,7 +111,7 @@ const FriendInfo = () => {
                                         day: "numeric"
                                     })
                                 })} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
-                                    <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><IoDocumentTextSharp /></h2>
+                                    <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><img  className="w-7" src="https://i.ibb.co.com/d4MZRCX1/text.png" alt="text" /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Text</p>
                                 </div>
                                 <div onClick={() => handleTimeline({
@@ -124,7 +121,7 @@ const FriendInfo = () => {
                                         day: "numeric"
                                     })
                                 })} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
-                                    <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><HiVideoCamera /></h2>
+                                    <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><img  className="w-7" src="https://i.ibb.co.com/pcSn7d3/3d-video.png" alt="video" /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Video</p>
                                 </div>
                             </div>
