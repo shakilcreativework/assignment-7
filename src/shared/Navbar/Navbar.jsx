@@ -1,4 +1,4 @@
-import logo from "./../../assets/logo.png"
+import logo from "./../../assets/logo.png";
 import Container from '../Container/Container';
 import { Link, NavLink } from "react-router";
 import { useState } from "react";

@@ -1,9 +1,10 @@
-import { use } from "react";
+import { use, useState } from "react";
 import AppContexts from "./AppContexts";
 
 const friendsPromise = fetch('/friends.json').then(res => res.json());
 
 const AppProviders = ({children}) => {
+    const [timeline, setTimeline] = useState([]);
     // load friends data use
     const friends = use(friendsPromise);
     // console.log(friends);
@@ -11,6 +12,8 @@ const AppProviders = ({children}) => {
     // passing values
     const values = {
         friends,
+        timeline,
+        setTimeline
     };
 
     return (

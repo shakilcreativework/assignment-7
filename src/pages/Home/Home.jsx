@@ -9,7 +9,7 @@ const Home = () => {
     const {friends} = useContext(AppContexts);
     // console.log(friends);
     return (
-        <div className='py-20'>
+        <div className=" py-10 md:py-14 lg:py-20">
             <Container>
                 <div className='space-y-10'>
                     <div className='flex flex-col justify-center items-center gap-4 text-center'>

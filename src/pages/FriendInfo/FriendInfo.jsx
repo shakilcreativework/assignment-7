@@ -8,32 +8,23 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdAddCall } from "react-icons/md";
 import { IoDocumentTextSharp } from "react-icons/io5";
 
-
-// {
-// "id": 1,
-// "name": "Amit Rahman",
-// "picture": "https://randomuser.me/api/portraits/men/32.jpg",
-// "email": "amit.rahman@gmail.com",
-// "days_since_contact": 20,
-// "status": "overdue",
-// "tags": ["college", "close friend"],
-// "bio": "We studied computer science together at university. Often go on weekend trips.",
-// "goal": 14,
-// "next_due_date": "2026-04-01"
-// }
-
 const FriendInfo = () => {
     const friendInfo = useParams();
-    const { friends } = useContext(AppContexts);
+    const { friends, timeline, setTimeline } = useContext(AppContexts);
     const { id } = friendInfo;
     // console.log(typeof id, id, friends);
     const findFriend = friends.find(friend => friend.id === Number(id));
     const { name, picture, days_since_contact, status, tags, bio, email, goal, next_due_date } = findFriend;
     // console.log(findFriend);
 
+    const handleTimeline = (type) => {
+        console.log('clicked', type);
+        setTimeline([...timeline, type]);
+    };
+
 
     return (
-        <div className="py-20">
+        <div className=" py-10 md:py-14 lg:py-20">
             <Container>
                 <div className="flex flex-col lg:flex-row justify-center gap-4 space-y-4">
                     <div className="space-y-4">
@@ -92,15 +83,27 @@ const FriendInfo = () => {
                             <h3 className="text-[#244d3f] text-lg lg:text-xl font-medium">Quick Check-In</h3>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div className="flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
+                                <div onClick={() => handleTimeline({type: "call", meet: name, date: new Date().toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric"
+                                })})} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
                                     <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><MdAddCall /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Call</p>
                                 </div>
-                                <div className="flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
+                                <div onClick={() => handleTimeline({type: "text", meet: name, date: new Date().toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric"
+                                })})} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
                                     <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><IoDocumentTextSharp /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Text</p>
                                 </div>
-                                <div className="flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
+                                <div onClick={() => handleTimeline({type: "video", meet: name, date: new Date().toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric"
+                                })})} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
                                     <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><FaVideo /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Video</p>
                                 </div>
