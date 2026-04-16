@@ -23,8 +23,8 @@ const Timeline = () => {
                     <div>
                         <div className="flex flex-col gap-3 mt-5">
                             {
-                                timeline.map(info => (
-                                    <div className="flex gap-4 items-center bg-white rounded-lg px-4 py-2 shadow-xs">
+                                timeline.map((info, idx) => (
+                                    <div key={idx} className="flex gap-4 items-center bg-white rounded-lg px-4 py-2 shadow-xs">
                                         {/* <img className="w-12" src={info.type === "call" ? call : info.type === "text" ? text : info.type === "video" ? video : ""} alt="Call Icon" /> */}
                                         {info.type === "call" ? <MdAddCall className="text-4xl" /> : info.type === "text" ? <IoDocumentTextSharp className="text-4xl" /> : info.type === "video" ? <FaVideo className="text-4xl" /> : ""}
                                         <div>

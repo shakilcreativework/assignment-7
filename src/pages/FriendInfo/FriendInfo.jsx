@@ -7,6 +7,7 @@ import { FaBoxArchive } from "react-icons/fa6";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdAddCall } from "react-icons/md";
 import { IoDocumentTextSharp } from "react-icons/io5";
+import { toast } from "react-toastify";
 
 const FriendInfo = () => {
     const friendInfo = useParams();
@@ -18,8 +19,20 @@ const FriendInfo = () => {
     // console.log(findFriend);
 
     const handleTimeline = (type) => {
-        console.log('clicked', type);
+        const { type: category, meet } = type;
+        console.log('clicked', type, meet);
         setTimeline([...timeline, type]);
+        toast.success(
+            <p className="capitalize text-base font-medium flex items-center gap-2">
+                {category === 'call' && <MdAddCall />}
+                {category === 'text' && <IoDocumentTextSharp />}
+                {category === 'video' && <FaVideo />}
+                <span>{meet}</span>
+            </p>,
+            {
+                position: "top-center", // 🔥 change here
+            }
+        );
     };
 
 
@@ -83,27 +96,33 @@ const FriendInfo = () => {
                             <h3 className="text-[#244d3f] text-lg lg:text-xl font-medium">Quick Check-In</h3>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div onClick={() => handleTimeline({type: "call", meet: name, date: new Date().toLocaleDateString("en-US", {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric"
-                                })})} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
+                                <div onClick={() => handleTimeline({
+                                    type: "call", meet: name, date: new Date().toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric"
+                                    })
+                                })} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
                                     <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><MdAddCall /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Call</p>
                                 </div>
-                                <div onClick={() => handleTimeline({type: "text", meet: name, date: new Date().toLocaleDateString("en-US", {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric"
-                                })})} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
+                                <div onClick={() => handleTimeline({
+                                    type: "text", meet: name, date: new Date().toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric"
+                                    })
+                                })} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
                                     <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><IoDocumentTextSharp /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Text</p>
                                 </div>
-                                <div onClick={() => handleTimeline({type: "video", meet: name, date: new Date().toLocaleDateString("en-US", {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric"
-                                })})} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
+                                <div onClick={() => handleTimeline({
+                                    type: "video", meet: name, date: new Date().toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric"
+                                    })
+                                })} className=" cursor-pointer flex flex-col justify-center items-center bg-[#f8fafc] rounded-lg p-4 space-y-2 shadow-xs">
                                     <h2 className="text-[#244d3f] font-semibold text-2xl lg:text-3xl"><FaVideo /></h2>
                                     <p className=" text-sm md:text-base lg:text-lg text-[#64748b]">Video</p>
                                 </div>
