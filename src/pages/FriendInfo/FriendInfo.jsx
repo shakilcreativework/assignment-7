@@ -20,12 +20,12 @@ const FriendInfo = () => {
         const { type: category, meet } = type;
         // console.log('clicked', type, meet);
         setTimeline([...timeline, type]);
-        toast.success(
+        toast(
             <p className="capitalize text-base font-medium flex items-center gap-2">
                 {category === 'call' && <img  className="w-5" src="https://i.ibb.co.com/TMKdG4F9/phone.png" alt="call" />}
                 {category === 'text' && <img  className="w-5" src="https://i.ibb.co.com/d4MZRCX1/text.png" alt="text" />}
                 {category === 'video' && <img className="w-5"  src="https://i.ibb.co.com/pcSn7d3/3d-video.png" alt="video" />}
-                <span>{meet}</span>
+                <p>{category} <span className="lowercase">with</span> {meet}</p>
             </p>,
             {
                 position: "top-center"

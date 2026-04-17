@@ -1,12 +1,12 @@
-import { useContext } from 'react';
+import { lazy, Suspense, useContext } from 'react';
 import Container from '../../shared/Container/Container';
 import { Link } from 'react-router';
 import { FaPlus } from 'react-icons/fa';
 import AppContexts from '../../context/AppContexts';
-import FriendCard from '../../components/FriendCard/FriendCard';
+const FriendCard = lazy(() => import('../../components/FriendCard/FriendCard'));
 
 const Home = () => {
-    const {friends} = useContext(AppContexts);
+    const { friends } = useContext(AppContexts);
     // console.log(friends);
     return (
         <div className=" py-10 md:py-14 lg:py-20">
@@ -15,7 +15,7 @@ const Home = () => {
                     <div className='flex flex-col justify-center items-center gap-4 text-center'>
                         <h1 className=' text-3xl md:text-4xl lg:text-5xl text-[#1f2937] font-bold'>Friends to keep close in your life</h1>
                         <p className='text-sm md:text-base text-[#64748b]'>our personal shelf of meaningful connections. Browse, tend, and nurture the <br className='hidden md:block' />
-                        relationships that matter most.</p>
+                            relationships that matter most.</p>
                         <Link className="flex items-center justify-center gap-2 capitalize py-2 px-6 rounded-md text-base font-medium transition-all text-white bg-[#244d3f] w-fit"><FaPlus /> Add a Friend</Link>
                     </div>
                     <div className='space-y-10'>
@@ -41,11 +41,15 @@ const Home = () => {
                         <h3 className=' text-lg md:text-xl lg:text-2xl text-[#1f2937] font-semibold'>Your Friends</h3>
                     </div>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 mt-6'>
-                    {
-                        friends.map(friend => <FriendCard key={friend.id} friend={friend} />)
-                    }
-                </div>
+                <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
+                    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 mt-6'>
+                        {
+                            friends.map(friend => <FriendCard key={friend.id} friend={friend} />)
+                        }
+                    </div>
+                </Suspense>
+                {/* <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
+                </Suspense> */}
             </Container>
         </div>
     );
