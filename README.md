@@ -1,16 +1,200 @@
-# React + Vite
+# 👥 KeenKeeper — Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
 
-Currently, two official plugins are available:
+KeenKeeper is a modern friendship management web application designed to help users maintain meaningful relationships. It allows users to track interactions, manage friends, and stay consistent with communication goals.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Live Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔝 Navbar
 
-## Expanding the ESLint configuration
+* Fully responsive navigation bar
+* Includes logo and navigation links (Home, Timeline, Stats)
+* Active route highlighting
+* Icons for better UX
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🎯 Home Page
+
+* Beautiful banner with title, subtitle, and CTA button
+* 4 summary cards (Total Friends, On Track, Need Attention, Interactions)
+* Responsive design across all devices
+
+### 👫 Friends Section
+
+* Dynamic friend cards loaded from JSON data
+* Each card includes:
+
+  * Profile picture
+  * Name
+  * Days since last contact
+  * Tags
+  * Status (color-coded)
+* Clickable cards → navigate to Friend Details page
+
+### 👤 Friend Details Page
+
+#### Left Section:
+
+* Profile info (image, name, email, bio)
+* Status with color indicator
+* Tags display
+* Action buttons (Snooze, Archive, Delete)
+
+#### Right Section:
+
+* 📊 Stats Cards:
+
+  * Days Since Contact
+  * Goal
+  * Next Due Date
+
+* 🎯 Relationship Goal Card
+
+* ⚡ Quick Check-In:
+
+  * Call
+  * Text
+  * Video
+
+✅ Clicking any check-in button:
+
+* Adds a timeline entry
+* Shows toast notification
+
+---
+
+### 📜 Timeline Page
+
+* Displays all interaction history
+* Each entry includes:
+
+  * Date
+  * Icon (Call / Text / Video)
+  * Title (e.g., "Call with John")
+
+### 🔍 Timeline Filter (Challenge Feature)
+
+* Filter by:
+
+  * Call
+  * Text
+  * Video
+
+---
+
+### 📊 Stats Page (Challenge Feature)
+
+* Friendship Analytics section
+* Pie chart showing interaction distribution
+* Built using Recharts
+
+---
+
+### 🦶 Footer
+
+* Clean and minimal footer design
+* Matches overall UI style
+
+---
+
+### 📱 Responsive Design
+
+* Fully responsive for:
+
+  * Mobile
+  * Tablet
+  * Desktop
+
+---
+
+### ⚙️ Additional Features
+
+* 404 Not Found Page
+* Loading spinner while fetching data
+* Toast notifications for interactions
+* SPA routing (no reload issues after deployment)
+
+---
+
+## 🛠️ Technologies Used
+
+* React JS
+* React Router
+* Tailwind CSS
+* DaisyUI
+* React Toastify
+* CLSX
+* Recharts
+
+---
+
+## 📂 Data Structure (Example)
+
+```json
+{
+  "id": 1,
+  "name": "John Doe",
+  "picture": "https://example.com/photo.jpg",
+  "email": "john@example.com",
+  "days_since_contact": 12,
+  "status": "overdue",
+  "tags": ["college", "close friend"],
+  "bio": "Met in university. Love hiking together.",
+  "goal": 14,
+  "next_due_date": "2025-07-20"
+}
+```
+
+---
+
+## ⭐ Key Features
+
+1. 📊 Track and manage friendships efficiently
+2. ⚡ Instant timeline updates with toast feedback
+3. 📱 Fully responsive and user-friendly UI
+
+---
+
+## 🧪 Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/shakilcreativework/assignment-7.git
+
+# Navigate to project folder
+cd keenkeeper
+
+# Install dependencies
+npm install
+
+# Run the project
+npm run dev
+```
+
+---
+
+## 📅 Deadlines
+
+* 🐣 Basic (60 marks): 17 April 2026 (11:59 PM)
+* ⏱️ Late (30 marks): After deadline
+
+---
+
+## 🙌 Final Notes
+
+* Clean code structure
+* Meaningful commits
+* Optimized user experience
+* Error-free deployment ready
+
+---
+
+## 📧 Contact
+
+If you have any questions or suggestions, feel free to reach out.
+
+---
+
+**✨ Keep your friendships alive with KeenKeeper!**
